@@ -4,17 +4,22 @@ import java.util.ArrayList;
 
 public class Alumno_Normal extends Alumnos{
     
-    private int conocimiento_acum = 0;
-    private int nivel_aprendizaje = 0;
+    private int conocimiento_acum;
+    private int nivel_aprendizaje;
     ArrayList<Examenes> list_exams = new ArrayList();
 
     public Alumno_Normal() {
         super();
     }
 
-    public Alumno_Normal(String nombre, int edad, String carrera, String lugar_nacimiento, int num_cuenta, String usuario, String contrasena) {
+
+    public Alumno_Normal(int conocimiento_acum, int nivel_aprendizaje, String nombre, int edad, String carrera, String lugar_nacimiento, int num_cuenta, String usuario, String contrasena) {
         super(nombre, edad, carrera, lugar_nacimiento, num_cuenta, usuario, contrasena);
+        this.conocimiento_acum = conocimiento_acum;
+        this.nivel_aprendizaje = nivel_aprendizaje;
     }
+
+    
 
     public int getConocimiento_acum() {
         return conocimiento_acum;

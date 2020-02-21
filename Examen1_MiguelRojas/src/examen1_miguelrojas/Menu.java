@@ -1,10 +1,17 @@
 package examen1_miguelrojas;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 public class Menu extends javax.swing.JFrame {
 
     public Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Alumno_Normal first = new Alumno_Normal(0, 0, "Miguel Rojas", 18, "Ing. Sistemas", "Tegucigalpa", 11941201, "MRojas", "pikachu18");
+        listNormalAlum.add(first);
+        listUsuarios.add("MRojas");
+        listPasswords.add("pikachu18");
     }
 
     /**
@@ -16,34 +23,234 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jd_crearCuenta = new javax.swing.JDialog();
+        jd_crearAlumno = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        tf_nombre = new javax.swing.JTextField();
+        tf_edad = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        tf_carrera = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tf_lugar = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        tf_num_cuenta = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        tf_usuario = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        pf_password = new javax.swing.JPasswordField();
+        jb_salir = new javax.swing.JButton();
+        jb_guardarAlumno = new javax.swing.JButton();
         jd_login = new javax.swing.JDialog();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        tf_usernameCheck = new javax.swing.JTextField();
+        pf_passwordCheck = new javax.swing.JPasswordField();
+        jb_ingresarLogIn = new javax.swing.JButton();
+        jb_salirLogIn = new javax.swing.JButton();
         jd_crearExam = new javax.swing.JDialog();
+        jd_crearTutor = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
+        tf_num_cuentaTutor = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tf_usuarioTutor = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        tf_nombreTutor = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        tf_edadTutor = new javax.swing.JTextField();
+        pf_passwordTutor = new javax.swing.JPasswordField();
+        jLabel15 = new javax.swing.JLabel();
+        tf_carreraTutor = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        tf_lugarTutor = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jb_guardarTutor = new javax.swing.JButton();
+        jb_salirTutor = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        tf_clasesTutor = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tf_tutorias_numTutor = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        tf_gananciasTutor = new javax.swing.JTextField();
+        jd_loginAlumno = new javax.swing.JDialog();
+        jd_loginTutor = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
 
-        javax.swing.GroupLayout jd_crearCuentaLayout = new javax.swing.GroupLayout(jd_crearCuenta.getContentPane());
-        jd_crearCuenta.getContentPane().setLayout(jd_crearCuentaLayout);
-        jd_crearCuentaLayout.setHorizontalGroup(
-            jd_crearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 462, Short.MAX_VALUE)
+        jLabel2.setText("Crear Alumno");
+
+        jLabel4.setText("Nombre");
+
+        jLabel5.setText("Edad");
+
+        jLabel6.setText("Carrera");
+
+        jLabel7.setText("Lugar de Nacimiento");
+
+        jLabel8.setText("Numero de Cuenta");
+
+        jLabel9.setText("Usuario");
+
+        jLabel10.setText("Contraseña");
+
+        jb_salir.setText("Salir");
+        jb_salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salirMouseClicked(evt);
+            }
+        });
+
+        jb_guardarAlumno.setText("Guardar");
+        jb_guardarAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guardarAlumnoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_crearAlumnoLayout = new javax.swing.GroupLayout(jd_crearAlumno.getContentPane());
+        jd_crearAlumno.getContentPane().setLayout(jd_crearAlumnoLayout);
+        jd_crearAlumnoLayout.setHorizontalGroup(
+            jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearAlumnoLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jd_crearAlumnoLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_lugar))
+                    .addComponent(jLabel2)
+                    .addGroup(jd_crearAlumnoLayout.createSequentialGroup()
+                        .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(86, 86, 86)
+                        .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_crearAlumnoLayout.createSequentialGroup()
+                        .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_num_cuenta)
+                            .addComponent(tf_usuario)))
+                    .addGroup(jd_crearAlumnoLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(64, 64, 64)
+                        .addComponent(pf_password)))
+                .addContainerGap(358, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_crearAlumnoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_guardarAlumno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jb_salir)
+                .addGap(41, 41, 41))
         );
-        jd_crearCuentaLayout.setVerticalGroup(
-            jd_crearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+        jd_crearAlumnoLayout.setVerticalGroup(
+            jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearAlumnoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel2)
+                .addGap(36, 36, 36)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tf_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tf_lugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tf_num_cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(pf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jd_crearAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_salir)
+                    .addComponent(jb_guardarAlumno))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
+
+        jLabel21.setText("Log In");
+
+        jLabel22.setText("Usuario");
+
+        jLabel23.setText("Contraseńa");
+
+        jb_ingresarLogIn.setText("Ingresar");
+        jb_ingresarLogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ingresarLogInMouseClicked(evt);
+            }
+        });
+
+        jb_salirLogIn.setText("Salir");
 
         javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
         jd_login.getContentPane().setLayout(jd_loginLayout);
         jd_loginLayout.setHorizontalGroup(
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23))
+                        .addGap(45, 45, 45)
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_usernameCheck, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(pf_passwordCheck)))
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jb_ingresarLogIn)
+                        .addGap(41, 41, 41)
+                        .addComponent(jb_salirLogIn))
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel21)))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         jd_loginLayout.setVerticalGroup(
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel21)
+                .addGap(60, 60, 60)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(tf_usernameCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(pf_passwordCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_ingresarLogIn)
+                    .addComponent(jb_salirLogIn))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jd_crearExamLayout = new javax.swing.GroupLayout(jd_crearExam.getContentPane());
@@ -54,6 +261,164 @@ public class Menu extends javax.swing.JFrame {
         );
         jd_crearExamLayout.setVerticalGroup(
             jd_crearExamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        jLabel3.setText("Crear Tutor");
+
+        jLabel11.setText("Numero de Cuenta");
+
+        jLabel12.setText("Nombre");
+
+        jLabel13.setText("Edad");
+
+        jLabel14.setText("Contraseña");
+
+        jLabel15.setText("Carrera");
+
+        jLabel16.setText("Lugar de Nacimiento");
+
+        jLabel17.setText("Usuario");
+
+        jb_guardarTutor.setText("Guardar");
+        jb_guardarTutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guardarTutorMouseClicked(evt);
+            }
+        });
+
+        jb_salirTutor.setText("Salir");
+        jb_salirTutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salirTutorMouseClicked(evt);
+            }
+        });
+
+        jLabel18.setText("Clases Impartidas ");
+
+        jLabel20.setText("Tutorias Dadas(Numero)");
+
+        jLabel19.setText("Ganancias");
+
+        javax.swing.GroupLayout jd_crearTutorLayout = new javax.swing.GroupLayout(jd_crearTutor.getContentPane());
+        jd_crearTutor.getContentPane().setLayout(jd_crearTutorLayout);
+        jd_crearTutorLayout.setHorizontalGroup(
+            jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearTutorLayout.createSequentialGroup()
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_crearTutorLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel3))
+                    .addGroup(jd_crearTutorLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addGroup(jd_crearTutorLayout.createSequentialGroup()
+                                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jd_crearTutorLayout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addGap(14, 14, 14))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_crearTutorLayout.createSequentialGroup()
+                                        .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_num_cuentaTutor)
+                                    .addComponent(tf_usuarioTutor)
+                                    .addComponent(tf_nombreTutor)
+                                    .addComponent(tf_edadTutor)
+                                    .addComponent(tf_carreraTutor)
+                                    .addComponent(tf_lugarTutor)
+                                    .addComponent(pf_passwordTutor)
+                                    .addComponent(tf_clasesTutor)
+                                    .addComponent(tf_tutorias_numTutor)
+                                    .addComponent(tf_gananciasTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(335, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_crearTutorLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jb_guardarTutor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_salirTutor)
+                .addGap(31, 31, 31))
+        );
+        jd_crearTutorLayout.setVerticalGroup(
+            jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearTutorLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(25, 25, 25)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tf_nombreTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tf_edadTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_carreraTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_lugarTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_num_cuentaTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tf_usuarioTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(pf_passwordTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tf_clasesTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_tutorias_numTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_gananciasTutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_crearTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_guardarTutor)
+                    .addComponent(jb_salirTutor))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_loginAlumnoLayout = new javax.swing.GroupLayout(jd_loginAlumno.getContentPane());
+        jd_loginAlumno.getContentPane().setLayout(jd_loginAlumnoLayout);
+        jd_loginAlumnoLayout.setHorizontalGroup(
+            jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_loginAlumnoLayout.setVerticalGroup(
+            jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_loginTutorLayout = new javax.swing.GroupLayout(jd_loginTutor.getContentPane());
+        jd_loginTutor.getContentPane().setLayout(jd_loginTutorLayout);
+        jd_loginTutorLayout.setHorizontalGroup(
+            jd_loginTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_loginTutorLayout.setVerticalGroup(
+            jd_loginTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
@@ -118,10 +483,24 @@ public class Menu extends javax.swing.JFrame {
 
     private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
         // TODO add your handling code here:
-        jd_crearCuenta.setModal(true);
-        jd_crearCuenta.pack();
-        jd_crearCuenta.setLocationRelativeTo(this);
-        jd_crearCuenta.setVisible(true);
+        try {
+            int opcion = Integer.parseInt(JOptionPane.showInputDialog(this, "Escoja un alumno\n[1] Alumno Normal\n[2] Tutor"));
+            if (opcion == 1) {
+                jd_crearAlumno.setModal(true);
+                jd_crearAlumno.pack();
+                jd_crearAlumno.setLocationRelativeTo(this);
+                jd_crearAlumno.setVisible(true);
+            } else {
+                jd_crearTutor.setModal(true);
+                jd_crearTutor.pack();
+                jd_crearTutor.setLocationRelativeTo(this);
+                jd_crearTutor.setVisible(true);
+            }
+        } catch (Exception e) {
+            System.out.println("El sistema se ha caido :(");
+        }
+
+
     }//GEN-LAST:event_jToggleButton1MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
@@ -139,6 +518,145 @@ public class Menu extends javax.swing.JFrame {
         jd_crearExam.setLocationRelativeTo(this);
         jd_crearExam.setVisible(true);
     }//GEN-LAST:event_jToggleButton3MouseClicked
+
+    private void jb_guardarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarAlumnoMouseClicked
+        // TODO add your handling code here:
+        try {
+            //Valores Generales
+            String nombre = "", carrera = "", lugar_nacimiento = "", usuario = "", contrasena = "";
+            int edad, num_cuenta;
+            //Valores de Alumno Normal
+            int conocimiento_acum = 0;
+            int nivel_aprendizaje = 0;
+            //Conseguir los Valores
+            nombre = tf_nombre.getText();
+            edad = Integer.parseInt(tf_edad.getText());
+            carrera = tf_carrera.getText();
+            lugar_nacimiento = tf_lugar.getText();
+            num_cuenta = Integer.parseInt(tf_num_cuenta.getText());
+            usuario = tf_usuario.getText();
+            contrasena = pf_password.getText();
+
+            Alumno_Normal alumNorm = new Alumno_Normal(conocimiento_acum, nivel_aprendizaje, nombre, edad, carrera, lugar_nacimiento, num_cuenta, usuario, contrasena);
+            listNormalAlum.add(alumNorm);
+            listUsuarios.add(usuario);
+            listPasswords.add(contrasena);
+            //Combo box
+            //
+
+            //Vaciar textfield
+            tf_nombre.setText("");
+            tf_edad.setText("");
+            tf_carrera.setText("");
+            tf_lugar.setText("");
+            tf_num_cuenta.setText("");
+            tf_usuario.setText("");
+            pf_password.setText("");
+            JOptionPane.showMessageDialog(this, "Se creo con exito al Alumno");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "El Programa encontro un error fatal");
+        }
+        jd_crearAlumno.dispose();
+    }//GEN-LAST:event_jb_guardarAlumnoMouseClicked
+
+    private void jb_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMouseClicked
+        // TODO add your handling code here:
+        jd_crearAlumno.dispose();
+    }//GEN-LAST:event_jb_salirMouseClicked
+
+    private void jb_guardarTutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarTutorMouseClicked
+        // TODO add your handling code here:
+
+        try {
+            String nombreTutor = "", carreraTutor = "", lugar_nacimientoTutor = "", usuarioTutor = "", contrasenaTutor = "", clases = "";
+            int edad_Tutor, num_cuentaTutor, ganancias, num_tutorias;
+
+            nombreTutor = tf_nombreTutor.getText();
+            edad_Tutor = Integer.parseInt(tf_edadTutor.getText());
+            carreraTutor = tf_carreraTutor.getText();
+            lugar_nacimientoTutor = tf_lugarTutor.getText();
+            num_cuentaTutor = Integer.parseInt(tf_num_cuentaTutor.getText());
+            usuarioTutor = tf_usuarioTutor.getText();
+            contrasenaTutor = pf_passwordTutor.getText();
+            clases = tf_clasesTutor.getText();
+            num_tutorias = Integer.parseInt(tf_tutorias_numTutor.getText());
+            ganancias = Integer.parseInt(tf_gananciasTutor.getText());
+            int nivel_ensenanza = 0;
+
+            Tutor tu = new Tutor(ganancias, num_tutorias, nivel_ensenanza, nombreTutor, edad_Tutor, carreraTutor, lugar_nacimientoTutor, num_cuentaTutor, usuarioTutor, contrasenaTutor);
+            listTutor.add(tu);
+            listUsuarios.add(usuarioTutor);
+            listPasswords.add(contrasenaTutor);
+
+            //Vaciar los TextFields
+            tf_nombreTutor.setText("");
+            tf_edadTutor.setText("");
+            tf_carreraTutor.setText("");
+            tf_lugarTutor.setText("");
+            tf_num_cuentaTutor.setText("");
+            tf_usuarioTutor.setText("");
+            pf_passwordTutor.setText("");
+            tf_clasesTutor.setText("");
+            tf_tutorias_numTutor.setText("");
+            tf_gananciasTutor.setText("");
+            JOptionPane.showMessageDialog(this, "Se creo con exito al Alumno");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "El Programa encontro un error fatal");
+        }
+        jd_crearTutor.dispose();
+
+
+    }//GEN-LAST:event_jb_guardarTutorMouseClicked
+
+    private void jb_salirTutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirTutorMouseClicked
+        // TODO add your handling code here:
+        jd_crearTutor.dispose();
+    }//GEN-LAST:event_jb_salirTutorMouseClicked
+
+    private void jb_ingresarLogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ingresarLogInMouseClicked
+        // TODO add your handling code here:
+
+        String usuarioCheck = "";
+        String passwordCheck = "";
+        usuarioCheck = tf_usernameCheck.getText();
+        passwordCheck = pf_passwordCheck.getText();
+
+        for (int i = 0; i < listUsuarios.size(); i++) {
+            for (int j = 0; j < listPasswords.size(); j++) {
+                if (!usuarioCheck.equals(listUsuarios.get(i))) {
+                    JOptionPane.showMessageDialog(this, "El usuario es incorrecto o no existe");
+                    break;
+                } else if (!passwordCheck.equals(listPasswords.get(i))) {
+                    JOptionPane.showMessageDialog(this, "La Contraseña es incorrecta o no existe");
+                    break;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Ingreso con exito");
+                    tf_usernameCheck.setText("");
+                    pf_passwordCheck.setText("");
+                    for (int k = 0; k < listNormalAlum.size(); k++) {
+                        if (usuarioCheck.equals(listNormalAlum.get(i).getUsuario())) {
+                            jd_loginAlumno.setModal(true);
+                            jd_loginAlumno.pack();
+                            jd_loginAlumno.setLocationRelativeTo(this);
+                            jd_loginAlumno.setVisible(true);
+                        } else {
+                            jd_loginTutor.setModal(true);
+                            jd_loginTutor.pack();
+                            jd_loginTutor.setLocationRelativeTo(this);
+                            jd_loginTutor.setVisible(true);
+                            
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+
+
+    }//GEN-LAST:event_jb_ingresarLogInMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -174,11 +692,67 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JDialog jd_crearCuenta;
+    private javax.swing.JButton jb_guardarAlumno;
+    private javax.swing.JButton jb_guardarTutor;
+    private javax.swing.JButton jb_ingresarLogIn;
+    private javax.swing.JButton jb_salir;
+    private javax.swing.JButton jb_salirLogIn;
+    private javax.swing.JButton jb_salirTutor;
+    private javax.swing.JDialog jd_crearAlumno;
     private javax.swing.JDialog jd_crearExam;
+    private javax.swing.JDialog jd_crearTutor;
     private javax.swing.JDialog jd_login;
+    private javax.swing.JDialog jd_loginAlumno;
+    private javax.swing.JDialog jd_loginTutor;
+    private javax.swing.JPasswordField pf_password;
+    private javax.swing.JPasswordField pf_passwordCheck;
+    private javax.swing.JPasswordField pf_passwordTutor;
+    private javax.swing.JTextField tf_carrera;
+    private javax.swing.JTextField tf_carreraTutor;
+    private javax.swing.JTextField tf_clasesTutor;
+    private javax.swing.JTextField tf_edad;
+    private javax.swing.JTextField tf_edadTutor;
+    private javax.swing.JTextField tf_gananciasTutor;
+    private javax.swing.JTextField tf_lugar;
+    private javax.swing.JTextField tf_lugarTutor;
+    private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombreTutor;
+    private javax.swing.JTextField tf_num_cuenta;
+    private javax.swing.JTextField tf_num_cuentaTutor;
+    private javax.swing.JTextField tf_tutorias_numTutor;
+    private javax.swing.JTextField tf_usernameCheck;
+    private javax.swing.JTextField tf_usuario;
+    private javax.swing.JTextField tf_usuarioTutor;
     // End of variables declaration//GEN-END:variables
+
+    ArrayList<Alumno_Normal> listNormalAlum = new ArrayList();
+    ArrayList<Tutor> listTutor = new ArrayList();
+    ArrayList<Examenes> listExam = new ArrayList();
+    ArrayList<String> listUsuarios = new ArrayList();
+    ArrayList<String> listPasswords = new ArrayList();
 }
