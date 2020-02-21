@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
 
+    int opcion = 0;
+
     public Menu() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -12,6 +14,10 @@ public class Menu extends javax.swing.JFrame {
         listNormalAlum.add(first);
         listUsuarios.add("MRojas");
         listPasswords.add("pikachu18");
+        Alumno_Normal second = new Alumno_Normal(0, 0, "Jose Rojas", 23, "Ing. Sistemas", "Tegucigalpa", 1234567, "Jose23Rojas", "tarantino");
+        listNormalAlum.add(second);
+        listUsuarios.add("Jose23Rojas");
+        listPasswords.add("tarantino");
     }
 
     /**
@@ -75,7 +81,44 @@ public class Menu extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         tf_gananciasTutor = new javax.swing.JTextField();
         jd_loginAlumno = new javax.swing.JDialog();
+        jLabel24 = new javax.swing.JLabel();
+        jb_modificarAlumno = new javax.swing.JButton();
+        jb_listarAlumno = new javax.swing.JButton();
+        jb_examenesAlumno = new javax.swing.JButton();
+        jb_reservar = new javax.swing.JButton();
+        jb_hacerExamenAlumno = new javax.swing.JButton();
+        jb_logout = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         jd_loginTutor = new javax.swing.JDialog();
+        jLabel25 = new javax.swing.JLabel();
+        jd_modificarAlumno = new javax.swing.JDialog();
+        jLabel32 = new javax.swing.JLabel();
+        tf_num_cuentaMOD = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        tf_usuarioMOD = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        tf_nombreMOD = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        tf_edadMOD = new javax.swing.JTextField();
+        pf_passwordMOD = new javax.swing.JPasswordField();
+        jLabel37 = new javax.swing.JLabel();
+        tf_carreraMOD = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jb_salirMOD = new javax.swing.JButton();
+        tf_lugarMOD = new javax.swing.JTextField();
+        jb_guardarAlumnoMOD = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        jd_listarAlumnos = new javax.swing.JDialog();
+        jLabel40 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -400,26 +443,280 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
+        jLabel24.setText("Alumno");
+
+        jb_modificarAlumno.setText("Modificar Datos");
+        jb_modificarAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificarAlumnoMouseClicked(evt);
+            }
+        });
+
+        jb_listarAlumno.setText("Listar Datos");
+        jb_listarAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_listarAlumnoMouseClicked(evt);
+            }
+        });
+
+        jb_examenesAlumno.setText("Ver Examenes");
+
+        jb_reservar.setText("Reservar Tutoria");
+
+        jb_hacerExamenAlumno.setText("Hacer Examen");
+
+        jb_logout.setText("Logout");
+        jb_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_logoutMouseClicked(evt);
+            }
+        });
+
+        jLabel26.setText("[1]");
+
+        jLabel27.setText("[2]");
+
+        jLabel28.setText("[3]");
+
+        jLabel29.setText("[4]");
+
+        jLabel30.setText("[5]");
+
+        jLabel31.setText("[6]");
+
         javax.swing.GroupLayout jd_loginAlumnoLayout = new javax.swing.GroupLayout(jd_loginAlumno.getContentPane());
         jd_loginAlumno.getContentPane().setLayout(jd_loginAlumnoLayout);
         jd_loginAlumnoLayout.setHorizontalGroup(
             jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_loginAlumnoLayout.createSequentialGroup()
+                .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_loginAlumnoLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel24))
+                    .addGroup(jd_loginAlumnoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel28))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jb_modificarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_examenesAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_listarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(102, 102, 102)
+                        .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jb_reservar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_hacerExamenAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jd_loginAlumnoLayout.setVerticalGroup(
             jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_loginAlumnoLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel24)
+                .addGap(71, 71, 71)
+                .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_modificarAlumno)
+                    .addComponent(jb_reservar)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel29))
+                .addGap(30, 30, 30)
+                .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_hacerExamenAlumno)
+                    .addComponent(jLabel30)
+                    .addComponent(jb_listarAlumno)
+                    .addComponent(jLabel27))
+                .addGap(18, 18, 18)
+                .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_loginAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jb_logout)
+                        .addComponent(jLabel31)
+                        .addComponent(jLabel28))
+                    .addComponent(jb_examenesAlumno))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
+
+        jLabel25.setText("Tutor");
 
         javax.swing.GroupLayout jd_loginTutorLayout = new javax.swing.GroupLayout(jd_loginTutor.getContentPane());
         jd_loginTutor.getContentPane().setLayout(jd_loginTutorLayout);
         jd_loginTutorLayout.setHorizontalGroup(
             jd_loginTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_loginTutorLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel25)
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         jd_loginTutorLayout.setVerticalGroup(
             jd_loginTutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_loginTutorLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel25)
+                .addContainerGap(262, Short.MAX_VALUE))
+        );
+
+        jLabel32.setText("Modificar Alumno");
+
+        jLabel33.setText("Usuario");
+
+        jLabel34.setText("Nombre");
+
+        jLabel35.setText("Edad");
+
+        jLabel36.setText("Contraseña");
+
+        jLabel37.setText("Carrera");
+
+        jLabel38.setText("Lugar de Nacimiento");
+
+        jb_salirMOD.setText("Salir");
+        jb_salirMOD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salirMODMouseClicked(evt);
+            }
+        });
+
+        jb_guardarAlumnoMOD.setText("Guardar");
+        jb_guardarAlumnoMOD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guardarAlumnoMODMouseClicked(evt);
+            }
+        });
+
+        jLabel39.setText("Numero de Cuenta");
+
+        javax.swing.GroupLayout jd_modificarAlumnoLayout = new javax.swing.GroupLayout(jd_modificarAlumno.getContentPane());
+        jd_modificarAlumno.getContentPane().setLayout(jd_modificarAlumnoLayout);
+        jd_modificarAlumnoLayout.setHorizontalGroup(
+            jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                            .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                                    .addComponent(jLabel38)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_lugarMOD))
+                                .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                                    .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel34)
+                                        .addComponent(jLabel35)
+                                        .addComponent(jLabel37))
+                                    .addGap(86, 86, 86)
+                                    .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tf_edadMOD, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tf_carreraMOD, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tf_nombreMOD, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                                    .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel39)
+                                        .addComponent(jLabel33))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tf_num_cuentaMOD)
+                                        .addComponent(tf_usuarioMOD)))
+                                .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                                    .addComponent(jLabel36)
+                                    .addGap(64, 64, 64)
+                                    .addComponent(pf_passwordMOD, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_modificarAlumnoLayout.createSequentialGroup()
+                            .addComponent(jb_guardarAlumnoMOD)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jb_salirMOD)))
+                    .addComponent(jLabel32))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_modificarAlumnoLayout.setVerticalGroup(
+            jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificarAlumnoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(tf_nombreMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(tf_edadMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(tf_carreraMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(tf_lugarMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(tf_num_cuentaMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(tf_usuarioMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(pf_passwordMOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jd_modificarAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_salirMOD)
+                    .addComponent(jb_guardarAlumnoMOD)))
+        );
+
+        jLabel40.setText("Alumnos");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", " " }));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Lugar de Nacimiento", "Numero de Cuenta", "Usuario", "Usuari"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jd_listarAlumnosLayout = new javax.swing.GroupLayout(jd_listarAlumnos.getContentPane());
+        jd_listarAlumnos.getContentPane().setLayout(jd_listarAlumnosLayout);
+        jd_listarAlumnosLayout.setHorizontalGroup(
+            jd_listarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
+                .addGroup(jd_listarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jLabel40))
+                    .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jd_listarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        jd_listarAlumnosLayout.setVerticalGroup(
+            jd_listarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel40)
+                .addGap(26, 26, 26)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -633,6 +930,7 @@ public class Menu extends javax.swing.JFrame {
                     break;
                 } else {
                     JOptionPane.showMessageDialog(this, "Ingreso con exito");
+                    jd_login.dispose();
                     tf_usernameCheck.setText("");
                     pf_passwordCheck.setText("");
                     for (int k = 0; k < listNormalAlum.size(); k++) {
@@ -646,17 +944,143 @@ public class Menu extends javax.swing.JFrame {
                             jd_loginTutor.pack();
                             jd_loginTutor.setLocationRelativeTo(this);
                             jd_loginTutor.setVisible(true);
-                            
+
                         }
                     }
 
-                    
                 }
             }
         }
 
 
     }//GEN-LAST:event_jb_ingresarLogInMouseClicked
+
+    private void jb_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logoutMouseClicked
+        // TODO add your handling code here:
+        jd_loginAlumno.dispose();
+    }//GEN-LAST:event_jb_logoutMouseClicked
+
+    private void jb_modificarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarAlumnoMouseClicked
+        // TODO add your handling code here:
+        for (int i = 0; i < listNormalAlum.size(); i++) {
+            JOptionPane.showMessageDialog(this, "Ingrese alumno a Modificar\n" + "[" + i + "]" + listNormalAlum.get(i).getNombre());
+        }
+        opcion = Integer.parseInt(JOptionPane.showInputDialog(this, "Eliga una opcion"));
+
+        int edadOld = listNormalAlum.get(opcion).getEdad();
+        String edadOG = String.valueOf(edadOld);
+        int num = listNormalAlum.get(opcion).getNum_cuenta();
+        String num_cuentaOG = String.valueOf(num);
+        tf_nombreMOD.setText("");
+        tf_nombreMOD.setText(listNormalAlum.get(opcion).getNombre());
+        tf_edadMOD.setText(edadOG);
+        tf_carreraMOD.setText(listNormalAlum.get(opcion).getCarrera());
+        tf_lugarMOD.setText(listNormalAlum.get(opcion).getLugar_nacimiento());
+        tf_num_cuentaMOD.setText(num_cuentaOG);
+        tf_usuarioMOD.setText(listNormalAlum.get(opcion).getUsuario());
+        pf_passwordMOD.setText(listNormalAlum.get(opcion).getContrasena());
+
+        jd_modificarAlumno.setModal(true);
+        jd_modificarAlumno.pack();
+        jd_modificarAlumno.setLocationRelativeTo(this);
+        jd_modificarAlumno.setVisible(true);
+
+
+    }//GEN-LAST:event_jb_modificarAlumnoMouseClicked
+
+    private void jb_salirMODMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMODMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_salirMODMouseClicked
+
+    private void jb_guardarAlumnoMODMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarAlumnoMODMouseClicked
+        // TODO add your handling code here:
+        try {
+            String nombreNew = "";
+            int edadNew;
+            String carreraNew = "";
+            String lugarNew = "";
+            int num_CuentaNew;
+            String usuario = "";
+            String password = "";
+
+            //Cambio
+            nombreNew = tf_nombreMOD.getText();
+            edadNew = Integer.parseInt(tf_edadMOD.getText());
+            carreraNew = tf_carreraMOD.getText();
+            lugarNew = tf_lugarMOD.getText();
+            num_CuentaNew = Integer.parseInt(tf_num_cuentaMOD.getText());
+            usuario = tf_usuarioMOD.getText();
+            password = pf_passwordMOD.getText();
+
+            if (nombreNew.equals(listNormalAlum.get(opcion).getNombre())) {
+                //do nothing
+            } else {
+                listNormalAlum.get(opcion).setNombre(nombreNew);
+            }
+
+            if (edadNew == listNormalAlum.get(opcion).getEdad()) {
+                //do nothing
+            } else {
+                listNormalAlum.get(opcion).setEdad(edadNew);
+            }
+
+            if (carreraNew.equals(listNormalAlum.get(opcion).getCarrera())) {
+                //do nothing
+            } else {
+                listNormalAlum.get(opcion).setCarrera(carreraNew);
+            }
+
+            if (lugarNew.equals(listNormalAlum.get(opcion).getLugar_nacimiento())) {
+                //do nothing
+            } else {
+                listNormalAlum.get(opcion).setLugar_nacimiento(lugarNew);
+            }
+
+            if (num_CuentaNew == listNormalAlum.get(opcion).getNum_cuenta()) {
+                //do nothing
+            } else {
+                listNormalAlum.get(opcion).setNum_cuenta(num_CuentaNew);
+            }
+
+            if (usuario.equals(listNormalAlum.get(opcion).getUsuario())) {
+                //do nothing
+            } else {
+                listNormalAlum.get(opcion).setUsuario(usuario);
+            }
+
+            if (password.equals(listNormalAlum.get(opcion).getContrasena())) {
+                //do nothing 
+            } else {
+                listNormalAlum.get(opcion).setContrasena(password);
+            }
+
+            JOptionPane.showMessageDialog(this, "Se modifico con exito el Alumno");
+
+            tf_nombreMOD.setText("");
+            tf_nombreMOD.setText("");
+            tf_edadMOD.setText("");
+            tf_carreraMOD.setText("");
+            tf_lugarMOD.setText("");
+            tf_num_cuentaMOD.setText("");
+            tf_usuarioMOD.setText("");
+            pf_passwordMOD.setText("");
+            jd_modificarAlumno.dispose();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error fatal");
+        }
+
+    }//GEN-LAST:event_jb_guardarAlumnoMODMouseClicked
+
+    private void jb_listarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarAlumnoMouseClicked
+        // TODO add your handling code here:
+        
+        jd_listarAlumnos.setModal(true);
+        jd_listarAlumnos.pack();
+        jd_listarAlumnos.setLocationRelativeTo(this);
+        jd_listarAlumnos.setVisible(true);
+        
+    }//GEN-LAST:event_jb_listarAlumnoMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -691,6 +1115,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -707,46 +1132,82 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JButton jb_examenesAlumno;
     private javax.swing.JButton jb_guardarAlumno;
+    private javax.swing.JButton jb_guardarAlumnoMOD;
     private javax.swing.JButton jb_guardarTutor;
+    private javax.swing.JButton jb_hacerExamenAlumno;
     private javax.swing.JButton jb_ingresarLogIn;
+    private javax.swing.JButton jb_listarAlumno;
+    private javax.swing.JButton jb_logout;
+    private javax.swing.JButton jb_modificarAlumno;
+    private javax.swing.JButton jb_reservar;
     private javax.swing.JButton jb_salir;
     private javax.swing.JButton jb_salirLogIn;
+    private javax.swing.JButton jb_salirMOD;
     private javax.swing.JButton jb_salirTutor;
     private javax.swing.JDialog jd_crearAlumno;
     private javax.swing.JDialog jd_crearExam;
     private javax.swing.JDialog jd_crearTutor;
+    private javax.swing.JDialog jd_listarAlumnos;
     private javax.swing.JDialog jd_login;
     private javax.swing.JDialog jd_loginAlumno;
     private javax.swing.JDialog jd_loginTutor;
+    private javax.swing.JDialog jd_modificarAlumno;
     private javax.swing.JPasswordField pf_password;
     private javax.swing.JPasswordField pf_passwordCheck;
+    private javax.swing.JPasswordField pf_passwordMOD;
     private javax.swing.JPasswordField pf_passwordTutor;
     private javax.swing.JTextField tf_carrera;
+    private javax.swing.JTextField tf_carreraMOD;
     private javax.swing.JTextField tf_carreraTutor;
     private javax.swing.JTextField tf_clasesTutor;
     private javax.swing.JTextField tf_edad;
+    private javax.swing.JTextField tf_edadMOD;
     private javax.swing.JTextField tf_edadTutor;
     private javax.swing.JTextField tf_gananciasTutor;
     private javax.swing.JTextField tf_lugar;
+    private javax.swing.JTextField tf_lugarMOD;
     private javax.swing.JTextField tf_lugarTutor;
     private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombreMOD;
     private javax.swing.JTextField tf_nombreTutor;
     private javax.swing.JTextField tf_num_cuenta;
+    private javax.swing.JTextField tf_num_cuentaMOD;
     private javax.swing.JTextField tf_num_cuentaTutor;
     private javax.swing.JTextField tf_tutorias_numTutor;
     private javax.swing.JTextField tf_usernameCheck;
     private javax.swing.JTextField tf_usuario;
+    private javax.swing.JTextField tf_usuarioMOD;
     private javax.swing.JTextField tf_usuarioTutor;
     // End of variables declaration//GEN-END:variables
 

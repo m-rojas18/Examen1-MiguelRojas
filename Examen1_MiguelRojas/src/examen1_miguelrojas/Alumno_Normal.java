@@ -44,7 +44,6 @@ public class Alumno_Normal extends Alumnos{
     public void setList_exams(ArrayList<Examenes> list_exams) {
         this.list_exams = list_exams;
     }
-    
-    
+
     
 }
