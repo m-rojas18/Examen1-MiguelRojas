@@ -1,7 +1,9 @@
 package examen1_miguelrojas;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -18,6 +20,12 @@ public class Menu extends javax.swing.JFrame {
         listNormalAlum.add(second);
         listUsuarios.add("Jose23Rojas");
         listPasswords.add("tarantino");
+
+        //Combo Box Add
+        DefaultComboBoxModel mod = (DefaultComboBoxModel) cb_alumnos.getModel();
+        mod.addElement(first);
+        mod.addElement(second);
+        cb_alumnos.setModel(mod);
     }
 
     /**
@@ -116,9 +124,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jd_listarAlumnos = new javax.swing.JDialog();
         jLabel40 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cb_alumnos = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_alumnos = new javax.swing.JTable();
+        jb_limpiarAlumnos = new javax.swing.JButton();
+        jb_salirListar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -677,17 +687,44 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel40.setText("Alumnos");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", " " }));
+        cb_alumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cb_alumnos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_alumnosItemStateChanged(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_alumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
                 "Nombre", "Edad", "Carrera", "Lugar de Nacimiento", "Numero de Cuenta", "Usuario", "Usuari"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabla_alumnos);
+
+        jb_limpiarAlumnos.setText("Limpiar");
+        jb_limpiarAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_limpiarAlumnosMouseClicked(evt);
+            }
+        });
+
+        jb_salirListar.setText("Salir");
+        jb_salirListar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salirListarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_listarAlumnosLayout = new javax.swing.GroupLayout(jd_listarAlumnos.getContentPane());
         jd_listarAlumnos.getContentPane().setLayout(jd_listarAlumnosLayout);
@@ -704,7 +741,12 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cb_alumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_listarAlumnosLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jb_limpiarAlumnos)
+                        .addGap(162, 162, 162)
+                        .addComponent(jb_salirListar)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         jd_listarAlumnosLayout.setVerticalGroup(
@@ -713,10 +755,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel40)
                 .addGap(26, 26, 26)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cb_alumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addGroup(jd_listarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_limpiarAlumnos)
+                    .addComponent(jb_salirListar))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -839,8 +885,11 @@ public class Menu extends javax.swing.JFrame {
             listUsuarios.add(usuario);
             listPasswords.add(contrasena);
             //Combo box
-            //
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_alumnos.getModel();
+            modelo.addElement(alumNorm);
+            cb_alumnos.setModel(modelo);
 
+            //
             //Vaciar textfield
             tf_nombre.setText("");
             tf_edad.setText("");
@@ -957,6 +1006,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jb_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_logoutMouseClicked
         // TODO add your handling code here:
+        jd_login.dispose();
         jd_loginAlumno.dispose();
     }//GEN-LAST:event_jb_logoutMouseClicked
 
@@ -990,6 +1040,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jb_salirMODMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMODMouseClicked
         // TODO add your handling code here:
+        jd_modificarAlumno.dispose();
     }//GEN-LAST:event_jb_salirMODMouseClicked
 
     private void jb_guardarAlumnoMODMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarAlumnoMODMouseClicked
@@ -1074,13 +1125,48 @@ public class Menu extends javax.swing.JFrame {
 
     private void jb_listarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarAlumnoMouseClicked
         // TODO add your handling code here:
-        
+        jd_loginAlumno.dispose();
         jd_listarAlumnos.setModal(true);
         jd_listarAlumnos.pack();
         jd_listarAlumnos.setLocationRelativeTo(this);
         jd_listarAlumnos.setVisible(true);
-        
+
     }//GEN-LAST:event_jb_listarAlumnoMouseClicked
+
+    private void cb_alumnosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_alumnosItemStateChanged
+        // TODO add your handling code here:
+        
+        if (evt.getStateChange() == 2) {
+            Alumno_Normal an = (Alumno_Normal)cb_alumnos.getSelectedItem();
+            
+            Object[] row = { an.getNombre(), an.getEdad(), an.getCarrera(), an.getLugar_nacimiento(), an.getNum_cuenta(), an.getUsuario(), an.getContrasena() };
+            DefaultTableModel model = (DefaultTableModel) tabla_alumnos.getModel();
+            model.addRow(row);
+            tabla_alumnos.setModel(model);
+        } 
+    }//GEN-LAST:event_cb_alumnosItemStateChanged
+
+    private void jb_limpiarAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_limpiarAlumnosMouseClicked
+        // TODO add your handling code here:
+        tabla_alumnos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Lugar de Nacimiento", "Numero de Cuenta", "Usuario", "Usuari"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean[] {false, false, false, false, false, false, false, false};
+        });
+    }//GEN-LAST:event_jb_limpiarAlumnosMouseClicked
+
+    private void jb_salirListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirListarMouseClicked
+        // TODO add your handling code here:
+        jd_listarAlumnos.dispose();
+    }//GEN-LAST:event_jb_salirListarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1115,7 +1201,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cb_alumnos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1157,7 +1243,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
@@ -1167,11 +1252,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jb_guardarTutor;
     private javax.swing.JButton jb_hacerExamenAlumno;
     private javax.swing.JButton jb_ingresarLogIn;
+    private javax.swing.JButton jb_limpiarAlumnos;
     private javax.swing.JButton jb_listarAlumno;
     private javax.swing.JButton jb_logout;
     private javax.swing.JButton jb_modificarAlumno;
     private javax.swing.JButton jb_reservar;
     private javax.swing.JButton jb_salir;
+    private javax.swing.JButton jb_salirListar;
     private javax.swing.JButton jb_salirLogIn;
     private javax.swing.JButton jb_salirMOD;
     private javax.swing.JButton jb_salirTutor;
@@ -1187,6 +1274,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPasswordField pf_passwordCheck;
     private javax.swing.JPasswordField pf_passwordMOD;
     private javax.swing.JPasswordField pf_passwordTutor;
+    private javax.swing.JTable tabla_alumnos;
     private javax.swing.JTextField tf_carrera;
     private javax.swing.JTextField tf_carreraMOD;
     private javax.swing.JTextField tf_carreraTutor;

@@ -45,5 +45,8 @@ public class Alumno_Normal extends Alumnos{
         this.list_exams = list_exams;
     }
 
-    
+    @Override
+    public String toString() {
+        return nombre;
+    } 
 }

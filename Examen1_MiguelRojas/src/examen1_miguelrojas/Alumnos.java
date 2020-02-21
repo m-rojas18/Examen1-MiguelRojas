@@ -2,7 +2,7 @@ package examen1_miguelrojas;
 
 public class Alumnos {
 
-    private String nombre;
+    String nombre;
     private int edad;
     private String carrera;
     private String lugar_nacimiento;
