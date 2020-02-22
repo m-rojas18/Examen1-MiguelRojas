@@ -1900,12 +1900,12 @@ public class Menu extends javax.swing.JFrame {
         int opcion = Integer.parseInt(JOptionPane.showInputDialog(this, "Escoja una examen por hacer"));
         
         listNormalAlum.get(opcion).setConocimiento_acum( r.nextInt(99) +  0);
-        
-        if (listNormalAlum.get(opcion).setConocimiento_acum( r.nextInt(99) +  0) > listExam.get(opcion).getConocimiento_requerido()) {
+        int n = listExam.get(opcion).getConocimiento_requerido();
+        /*if (listNormalAlum.get(opcion).setConocimiento_acum( r.nextInt(99) +  0) > 90) {
             JOptionPane.showMessageDialog(this, "Aprobo el examen !!!");
         } else {
             JOptionPane.showMessageDialog(this, "Reprobo el examen");
-        }
+        }*/
         
     }//GEN-LAST:event_jb_hacerExamenAlumnoMouseClicked
 
