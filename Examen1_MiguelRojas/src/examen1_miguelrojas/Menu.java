@@ -1,6 +1,7 @@
 package examen1_miguelrojas;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -37,6 +38,12 @@ public class Menu extends javax.swing.JFrame {
         DefaultComboBoxModel modelTutor = (DefaultComboBoxModel) cb_tutor.getModel();
         modelTutor.addElement(prim);
         cb_tutor.setModel(mod);
+        
+        //Generar Examenes 
+        Examenes exam = new Examenes(70,"The War of the Roses" , 70);
+        Examenes exam2 = new Examenes(60, "Intro al Algebra", 60);
+        listExam.add(exam);
+        listExam.add(exam2);
         
     }
 
@@ -551,6 +558,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jb_hacerExamenAlumno.setText("Hacer Examen");
+        jb_hacerExamenAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_hacerExamenAlumnoMouseClicked(evt);
+            }
+        });
 
         jb_logout.setText("Logout");
         jb_logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1245,6 +1257,11 @@ public class Menu extends javax.swing.JFrame {
                 jToggleButton3MouseClicked(evt);
             }
         });
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1312,10 +1329,11 @@ public class Menu extends javax.swing.JFrame {
 
     private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
         // TODO add your handling code here:
-        jd_crearExam.setModal(true);
+        JOptionPane.showMessageDialog(this, "No termine esta Seccion");
+        /*jd_crearExam.setModal(true);
         jd_crearExam.pack();
         jd_crearExam.setLocationRelativeTo(this);
-        jd_crearExam.setVisible(true);
+        jd_crearExam.setVisible(true);*/
     }//GEN-LAST:event_jToggleButton3MouseClicked
 
     private void jb_guardarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarAlumnoMouseClicked
@@ -1870,6 +1888,30 @@ public class Menu extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jb_examenesAlumnoMouseClicked
+
+    private void jb_hacerExamenAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_hacerExamenAlumnoMouseClicked
+        // TODO add your handling code here:
+        
+        Random r = new Random();
+        
+        for (int i = 0; i < listExam.size(); i++) {
+            JOptionPane.showMessageDialog(this, "Examen [" + i + "]" + listExam.get(i).getTema());
+        }
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog(this, "Escoja una examen por hacer"));
+        
+        listNormalAlum.get(opcion).setConocimiento_acum( r.nextInt(99) +  0);
+        
+        if (listNormalAlum.get(opcion).setConocimiento_acum( r.nextInt(99) +  0) > listExam.get(opcion).getConocimiento_requerido()) {
+            JOptionPane.showMessageDialog(this, "Aprobo el examen !!!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Reprobo el examen");
+        }
+        
+    }//GEN-LAST:event_jb_hacerExamenAlumnoMouseClicked
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
