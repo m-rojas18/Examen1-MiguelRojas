@@ -51,6 +51,11 @@ public class Tutor extends Alumnos{
     public void setListClases(ArrayList<Clase> listClases) {
         this.listClases = listClases;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
     
     
     
