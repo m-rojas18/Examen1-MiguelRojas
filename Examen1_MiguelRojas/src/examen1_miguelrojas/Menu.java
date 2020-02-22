@@ -537,6 +537,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jb_examenesAlumno.setText("Ver Examenes");
+        jb_examenesAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_examenesAlumnoMouseClicked(evt);
+            }
+        });
 
         jb_reservar.setText("Reservar Tutoria");
         jb_reservar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1853,6 +1858,18 @@ public class Menu extends javax.swing.JFrame {
         jd_reservarTutoria.setVisible(true);
         
     }//GEN-LAST:event_jb_modTutorMouseClicked
+
+    private void jb_examenesAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_examenesAlumnoMouseClicked
+        // TODO add your handling code here:
+        if (listExam.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"No hay examenes" );
+        } else {
+            for (int i = 0; i < listExam.size(); i++) {
+                JOptionPane.showMessageDialog(this, "Examen[" + i  + "]" + listExam.get(i));
+            }
+        }
+        
+    }//GEN-LAST:event_jb_examenesAlumnoMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
